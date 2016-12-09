@@ -48,6 +48,9 @@
               <value>
                 <string>linotp</string>
               </value>
+               <value>
+                <string>linotp-portlets</string>
+              </value>
             </collection>
           </field>
           <!-- The name of the target dependency -->

@@ -32,5 +32,18 @@
 	<listener>
 		<listener-class>org.exoplatform.container.web.PortalContainerConfigOwner</listener-class>
 	</listener>
+	<servlet>
+		<servlet-name>linotpCheck</servlet-name>
+		<servlet-class>org.exoplatform.addons.linotp.web.LinOTPLogin</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>linotpCheck</servlet-name>
+		<url-pattern>/linotpCheck</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>linotpCheck</servlet-name>
+		<url-pattern>/linOTPcheckAction</url-pattern>
+	</servlet-mapping>
 
 </web-app>

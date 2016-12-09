@@ -34,6 +34,8 @@
   <description>Two factor authentication with linotp</description>
   <modules>
     <module>war</module>
+    <module>portlets</module>
+    <module>services</module>
     <module>packaging</module>
   </modules>
   <scm>

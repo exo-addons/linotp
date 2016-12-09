@@ -1,0 +1,140 @@
+.UIWindow .UISpacesListPortlet {	
+	overflow: visible;
+}
+
+.UISpacesListPortlet {
+	overflow: auto;
+}
+
+.UISpacesListPortlet .SpacesListPortletContainer {
+	padding: 7px;
+	width: auto;
+}
+
+
+
+.UISpacesListPortlet .UIToolbar .LargeToolbar	{
+	width: 100%;
+	margin: 0px 0px 5px 0px;
+}
+
+.UISpacesListPortlet .UISearch	{
+	width: 100%;
+	margin: 0px auto;
+}
+
+.UISpacesListPortlet .UIToolbar .LargeToolbar .HorizontalSeparator {
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
+	margin-top: 3px;
+	width: 2px; 
+	height: 50px;
+}
+
+.UISpacesListPortlet .UIToolbar .LargeToolbar .ButtonLabel {
+	height: 18px; line-height: 18px;
+	padding-left: 0px;
+}
+
+.UISpacesListPortlet .UIToolbar .LargeToolbar .SelectButtonLabel {
+	line-height: 18px;
+	color: #003C7F;
+}
+
+.UISpacesListPortlet .UIBreadcumbs .LeftBreadcumbsBar {
+	padding: 0px 0px 0px 5px;
+	background: url('DefaultSkin/background/BreadcumbsBar.gif') no-repeat left -26px;
+}
+
+.UISpacesListPortlet .UIBreadcumbs .RightBreadcumbsBar {
+	padding: 0px 5px 0px 0px;
+	background: url('DefaultSkin/background/BreadcumbsBar.gif') no-repeat right -52px;
+}
+
+.UISpacesListPortlet .UIBreadcumbs .BreadcumbsInfoBar {
+	height: 25px; line-height: 25px; vertical-align: middle;
+	background: url('DefaultSkin/background/BreadcumbsBar.gif') repeat-x;
+}
+
+.UISpacesListPortlet .ManagementIconContainer {
+	padding-top: 4px;
+	margin-left: 5px;
+	text-align: center;
+}
+
+.UISpacesListPortlet .UserManagementIcon {
+	width: 32px; height: 32px; 
+	background: url('/eXoResources/skin/DefaultSkin/skinIcons/32x32/icons/UserManagement.gif') no-repeat center;
+	margin: auto;
+}
+
+
+
+.UISpacesListPortlet .UIFormWithTitle {
+	width: auto;
+	margin: auto;
+}
+
+.UISpacesListPortlet .UIGroupManagement .GroupDetail .UITabPane {
+	height:auto;
+}
+
+.UISpacesListPortlet .UIForm .UIFormInputSet {
+	background: white;
+	height: 280px; width: auto;
+	border: solid 1px #b7b7b7;
+	padding: 20px 0px;
+}
+
+.UISpacesListPortlet .UIPersonalInfo .UIItemSelector .ItemDetailList {
+	height: 345px;
+}
+
+.UISpacesListPortlet .UIPersonalInfo .UIItemSelector .ItemList {
+	height: 324px;
+}
+
+.UISpacesListPortlet .UIPersonalInfo .UIFormInputSet {
+	border: none;
+	height: auto;
+}
+
+.UISpacesListPortlet .UISpaceManagement .UIGrid {
+	margin: 1px auto;
+}
+
+.uiGrid.table td .Text, .uiGrid.table th .Text {
+    overflow: hidden;
+    float: left;
+}
+
+/*#######################- UISpaceInfo - #####################*/
+
+.UISpacesListPortlet .UISpaceManagement .UISpaceInfo {
+	width: auto; 
+}
+
+
+.UISpacesListPortlet .UISpaceManagement .UISearchForm { 
+	float: left; /* orientation=lt */
+	float: right; /* orientation=rt */
+	height: auto;
+	width: 100%;
+}
+
+.UISpacesListPortlet .UISearch .UISearchForm .QuickSet {
+	width: auto;
+	_width: 450px; /* orientation=rt */
+}
+
+.UISpacesListPortlet .UISpaceManagement a.Refresh16x16Icon { 
+	float: right;
+	width: 20px; height: 20px;
+	margin: 10px;
+}
+
+
+.UISpacesListPortlet .img{
+	padding: 0px 0px 0px 5px;
+	background: url('DefaultSkin/background/BreadcumbsBar.gif') no-repeat left -26px;
+}
