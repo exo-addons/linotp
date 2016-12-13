@@ -22,8 +22,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.exoplatform.addons.linotp</groupId>
     <artifactId>linotp</artifactId>
+    <groupId>org.exoplatform.addons.linotp</groupId>
     <version>1.0.x-SNAPSHOT</version>
   </parent>
   <artifactId>linotp-portlets</artifactId>
@@ -39,7 +39,7 @@
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-component-webui</artifactId>
-	  <scope>provided</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
@@ -47,7 +47,6 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-  
   <build>
     <finalName>linotp-portlets</finalName>
   </build>
