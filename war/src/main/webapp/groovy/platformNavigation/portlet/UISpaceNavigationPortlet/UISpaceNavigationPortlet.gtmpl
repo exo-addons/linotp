@@ -65,7 +65,7 @@
                         }
         %>
                                 <li class="spaceItem $tabStyleNavigation">
-                                <% if(org.exoplatform.addons.linotp.utils.isSecuredSpace(space)){%>
+                                <% if(org.exoplatform.addons.linotp.utils.LinotpUtils.isSecuredSpace(space)){%>
   <a href="javascript:void(0);" onclick="$link" class="spaceIcon avatarMini" ><img title="" alt="" src="$spaceImageSource" /><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" data-original-title="$spaceDisplayName"> $spaceDisplayName</span><img src="/linotp-portlets/skin/css/linotpSpaceSecurityPortlet/lock.ico" style="width: 16px;height: 16px;float:right;/* display: inline-table; */"></a>
                                 <% } else{ %>
                                   <a href="javascript:void(0);" onclick="$link" class="spaceIcon avatarMini" ><img title="" alt="" src="$spaceImageSource" /><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" data-original-title="$spaceDisplayName"> $spaceDisplayName</span></a>

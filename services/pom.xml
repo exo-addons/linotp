@@ -86,9 +86,17 @@
 		 <groupId>org.exoplatform.social</groupId>
 		<artifactId>social-component-core-jpa</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
-		<plugins>
-		</plugins>
+	<plugins>
+		<plugin>
+			<groupId>com.jcabi</groupId>
+			<artifactId>jcabi-maven-plugin</artifactId>
+		</plugin>
+	</plugins>
 	</build>
 </project>
