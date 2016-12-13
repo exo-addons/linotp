@@ -17,6 +17,16 @@
       <scope>provided</scope>
       <outputFileNameMapping>linotp.war</outputFileNameMapping>
     </dependencySet>
+        <!-- Portlets war -->
+    <dependencySet>
+      <useProjectArtifact>false</useProjectArtifact>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>${project.groupId}:linotp-portlets:war</include>
+      </includes>
+      <scope>provided</scope>
+      <outputFileNameMapping>linotp-portlets.war</outputFileNameMapping>
+    </dependencySet>
     <!-- Libraries -->
     <dependencySet>
       <useProjectArtifact>false</useProjectArtifact>
