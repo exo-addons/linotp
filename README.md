@@ -9,7 +9,7 @@
 
 ![Workflow](https://raw.github.com/exo-addons/linotp/master/documentation/images/linotp-exoWorkflow.png)
 
-* The LinOTP admin create a token and assign it to one of your users.
+* The LinOTP admin create a token and assign it to one of eXo users.
 * The admin choose a Token Type (tested scenario with both “HMAC time based” and "HMAC event based”).
 * The admin enroll the token to the chosen user.
 * The result will be a QR code that should be provided to the user.
