@@ -1,8 +1,7 @@
 #LinOTP add-on
 
 Now everyone understand that collaboration and information sharing are vital to business success, but in several cases this collaboration taking place is close to confidential and without a methodical approach for safe and secure collaborative working, collaboration and sharing can easily bring a disaster.
-
-A layered security approach Two-factor authentication: in which  user is only granted access after successfully presenting of two different components:
+These approach can include a layered security approach ex Two-factor authentication(case this sample integration): in which  user is only granted access to some secure space after successfully presenting of two different components:
 
 1-Something You Know:
 
