@@ -42,7 +42,27 @@ The second authentication factor requires something the user has, such as a QR c
 
 ##Installation
 
+You can test with a pre-configured [linotp](https://www.linotp.org/) server installed in docker container :
 
+[linotp docker image]: https://hub.docker.com/r/azaoui/exo-linotp2/
 
+```
+docker pull azaoui/exo-linotp2
 
-##Configuration
+```
+The mysql admin user for this image is : root/linotp
+and the apache2  admin user is : admin/admin
+
+Install eXo Platform add-on from catalog:
+
+```
+./addon install linotp
+```
+
+Configure your exo.properties: 
+
+```
+aunde.linotp.host=hostName (the Hostname where LinOTP installed)
+```
+Import the linOTP certificate to the java keystore where eXo will be running.
+
