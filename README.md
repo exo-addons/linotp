@@ -33,11 +33,12 @@ The second authentication factor requires something the user has, such as a QR c
 
 ##Usage
 
-###Spaces Security Management
 
+####Spaces Security Management
+![Manage space security](https://raw.github.com/exo-addons/linotp/master/documentation/images/SpaceSecurityManagementPortlet.png)
 
-###Login to a Secure Space
-
+####Login to a Secure Space
+![Access to Secure Space](https://raw.github.com/exo-addons/linotp/master/documentation/images/StepVerification.png)
 
 
 ##Installation
