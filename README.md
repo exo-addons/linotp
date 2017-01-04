@@ -62,7 +62,7 @@ Install eXo Platform add-on from catalog:
 Configure your exo.properties: 
 
 ```
-aunde.linotp.host=hostName (the Hostname where LinOTP installed)
+exo.linotp.linotp.host=hostName (the Hostname where LinOTP installed)
 ```
 Import the linOTP certificate to the java keystore where eXo will be running.
 
