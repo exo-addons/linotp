@@ -1,5 +1,7 @@
 #LinOTP add-on
 
+##Introduction
+
 Now everyone understand that collaboration and information sharing are vital to business success, but in several cases this collaboration taking place is close to confidential and without a methodical approach for safe and secure collaborative working, collaboration and sharing can easily bring a disaster.
 These approach can include a layered security approach ex Two-factor authentication(case this sample integration): in which  user is only granted access to some secure space after successfully presenting of two different components:
 
@@ -10,9 +12,6 @@ The something you know factor is the most common factor used and can be a passwo
 2-Something You Have:
 
 The second authentication factor requires something the user has, such as a QR code and QR reader, a device to generate time-based one-time passwords that can be used only and only one time.
-
-##Introduction
-
 
 ##workflow
 
