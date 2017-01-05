@@ -44,7 +44,7 @@ The second authentication factor requires something the user has, such as a QR c
 
 You can test with a pre-configured [linotp](https://www.linotp.org/) server installed in docker container :
 
-[linotp docker image]: https://hub.docker.com/r/azaoui/exo-linotp2/
+[linotp docker image](https://hub.docker.com/r/azaoui/exo-linotp2/)
 
 ```
 docker pull azaoui/exo-linotp2
