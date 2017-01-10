@@ -3,9 +3,11 @@ package org.exoplatform.addons.linotp.web;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.NoRouteToHostException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.UnknownHostException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 
 import javax.net.ssl.SSLException;
 import javax.servlet.ServletException;
@@ -13,14 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.exoplatform.addons.linotp.service.LinOTPServiceConfig;
+import org.apache.http.conn.HttpHostConnectException;
+import org.exoplatform.addons.linotp.client.LinOTPHttpsClient;
 import org.exoplatform.commons.api.settings.SettingService;
 import org.exoplatform.commons.api.settings.SettingValue;
 import org.exoplatform.commons.api.settings.data.Context;
@@ -29,7 +25,6 @@ import org.exoplatform.container.PortalContainer;
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * created on 17/11/2016
@@ -61,8 +56,8 @@ public class LinOTPLogin extends HttpServlet {
 
   private static final String NOT_REACHABLE          = "notReachable";
 
-  LinOTPServiceConfig         linOTPServiceConfig    = (LinOTPServiceConfig) PortalContainer.getInstance()
-                                                                                            .getComponentInstanceOfType(LinOTPServiceConfig.class);
+  LinOTPHttpsClient           linOTPHttpsClient      = (LinOTPHttpsClient) PortalContainer.getInstance()
+                                                                                          .getComponentInstanceOfType(LinOTPHttpsClient.class);
 
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -77,66 +72,19 @@ public class LinOTPLogin extends HttpServlet {
         return;
       }
       String otpPass = pin.concat(otp);
-      Boolean status = false;
-      Boolean value = false;
-      getOrCreateServiceSettings(request.getQueryString(), settingService);
-
-      URI uri = null;
-
+      boolean verify = false;
       try {
-        uri = new URIBuilder().setScheme("https")
-                              .setPath(linOTPServiceConfig.getValidationPath())
-                              .setHost(linOTPServiceConfig.getLinotpHost())
-                              .setParameter("user", otpUser)
-                              .setParameter("pass", otpPass)
-                              .build();
-
-        HttpGet httpGet = new HttpGet(uri);
-        HttpClient client = HttpClients.createDefault();
-        HttpResponse httpResponse = client.execute(httpGet);
-        HttpEntity entity = httpResponse.getEntity();
-        String jsonContent = EntityUtils.toString(entity);
-        JSONObject otpJSONObject = null;
-
-        otpJSONObject = new JSONObject(jsonContent);
-        JSONObject result = otpJSONObject.getJSONObject("result");
-
-        status = result.getBoolean("status");
-        value = result.getBoolean("value");
-      } catch (JSONException e) {
+        verify = linOTPHttpsClient.checkVerify(otpUser, pin, otp);
+      } catch (UnknownHostException |KeyManagementException | NoSuchAlgorithmException | KeyStoreException | URISyntaxException | JSONException |HttpHostConnectException | MalformedURLException |SSLException  |NoRouteToHostException e ) {
         // TODO Auto-generated catch block
+        //to do should add error code according to exception type (multi catch)
         LOG.error(e);
-        request.getSession().setAttribute(NOT_REACHABLE, "true");
-        getServletContext().getRequestDispatcher(OTP_JSP_RESOURCE_ERROR).forward(request, response);
-        return;
-      } catch (URISyntaxException e) {
-        // TODO Auto-generated catch block
-        request.getSession().setAttribute(NOT_REACHABLE, "true");
-        LOG.error(e);
-        getServletContext().getRequestDispatcher(OTP_JSP_RESOURCE_ERROR).forward(request, response);
-        return;
-      } catch (UnknownHostException e) {
-        request.getSession().setAttribute(NOT_REACHABLE, "true");
-        LOG.error(e);
-        getServletContext().getRequestDispatcher(OTP_JSP_RESOURCE_ERROR).forward(request, response);
-        return;
-      } catch (SSLException e) {
-        request.getSession().setAttribute(NOT_REACHABLE, "true");
-        LOG.error(e);
-        getServletContext().getRequestDispatcher(OTP_JSP_RESOURCE_ERROR).forward(request, response);
-        return;
-      } catch (MalformedURLException e) {
-        LOG.error(" Error creating HTTPs connection to the linOTP server : " + uri.getHost());
-        request.getSession().setAttribute(NOT_REACHABLE, "true");
-        getServletContext().getRequestDispatcher(OTP_JSP_RESOURCE_ERROR).forward(request, response);
-      } catch (NoRouteToHostException e) {
-        LOG.error(" Error creating HTTPs connection to the linOTP server : " + uri.getHost());
         request.getSession().setAttribute(NOT_REACHABLE, "true");
         getServletContext().getRequestDispatcher(OTP_JSP_RESOURCE_ERROR).forward(request, response);
         return;
       }
 
-      if (status && value) {
+      if (verify) {
         updateServiceSettings(request.getQueryString(), otpPass, settingService);
         response.sendRedirect(getInitialUriServiceSettings(otpUser, settingService));
       } else

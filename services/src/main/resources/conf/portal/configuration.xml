@@ -17,13 +17,23 @@
 		<init-params>
 			<value-param>
 				<name>linotpHost</name>
-				<value>${exo.linotp.host:790c7a5572a0.}</value>
+				<value>${exo.linotp.host:f06da8df3432.}</value>
 			</value-param>
 			<value-param>
 				<name>linotp-validationPath</name>
 				<value>${exo.linotp.validationPath:/validate/check}</value>
 			</value-param>
+			<value-param>
+				<name>linotp-realm</name>
+				<value>${exo.linotp.realm:testdomain}</value>
+			</value-param>
 		</init-params>
+	</component>
+	<component>
+		<type>org.exoplatform.addons.linotp.client.LinOTPHttpsClient</type>
+	</component>
+	<component>
+		<type>org.exoplatform.addons.linotp.client.ClientSSLConfig</type>
 	</component>
 	  <!-- LISTENER -->
   <external-component-plugins>
