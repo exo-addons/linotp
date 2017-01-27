@@ -24,7 +24,7 @@
   <parent>
     <artifactId>addons-parent-pom</artifactId>
     <groupId>org.exoplatform.addons</groupId>
-    <version>7-RC01</version>
+    <version>7</version>
   </parent>
   <groupId>org.exoplatform.addons.linotp</groupId>
   <artifactId>linotp</artifactId>
@@ -45,7 +45,7 @@
     <url>https://github.com/exo-addons/linotp</url>
   </scm>
   <properties>
-    <platform.version>4.4.0-RC03</platform.version>
+    <platform.version>4.4.0</platform.version>
     <!-- FIXME: should be provided by GateIn dependency management import (pom to find) -->
     <apache-httpcomponents-httpclient.version>4.3.6</apache-httpcomponents-httpclient.version>
     <apache-httpcomponents-httpcore.version>4.3.3</apache-httpcomponents-httpcore.version>
