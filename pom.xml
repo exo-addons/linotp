@@ -46,6 +46,9 @@
   </scm>
   <properties>
     <platform.version>4.4.0-RC03</platform.version>
+    <!-- FIXME: should be provided by GateIn dependency management import (pom to find) -->
+    <apache-httpcomponents-httpclient.version>4.3.6</apache-httpcomponents-httpclient.version>
+    <apache-httpcomponents-httpcore.version>4.3.3</apache-httpcomponents-httpcore.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -57,6 +60,32 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.linotp</groupId>
+        <artifactId>linotp-services</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.linotp</groupId>
+        <artifactId>linotp-portlets</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.exoplatform.addons.linotp</groupId>
+        <artifactId>linotp-war</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>${apache-httpcomponents-httpclient.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpcore</artifactId>
+        <version>${apache-httpcomponents-httpcore.version}</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 </project>

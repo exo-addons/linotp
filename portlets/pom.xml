@@ -33,7 +33,6 @@
     <dependency>
       <groupId>org.exoplatform.addons.linotp</groupId>
       <artifactId>linotp-services</artifactId>
-      <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>

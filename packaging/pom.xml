@@ -17,7 +17,7 @@
       <type>war</type>
       <scope>provided</scope>
     </dependency>
-     <dependency>
+    <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>linotp-portlets</artifactId>
       <version>1.0.x-SNAPSHOT</version>
