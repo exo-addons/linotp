@@ -56,7 +56,7 @@ and the apache2  admin user is : admin/admin
 Install eXo Platform add-on from catalog:
 
 ```
-./addon install linotp
+/addon install exo-linotp --snapshots
 ```
 
 Configure your exo.properties: 
