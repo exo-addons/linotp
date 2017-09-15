@@ -27,7 +27,7 @@ import org.exoplatform.web.filter.Filter;
  * @author azaoui@exoplatform.com
  */
 public class LinOTPFilter implements Filter {
-  private static final String LINOTP_SERVLET_CTX = "/linotp-extension";
+  private static final String LINOTP_SERVLET_CTX = "/linotp";
 
   private static final String ACCOUNT_SETUP_SERVLET       = "/linotpCheck";
 
